@@ -7,12 +7,17 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Performance Center">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="color-scheme" content="dark light">
 
   <title>Performance Center</title>
 
-  <link rel="manifest" href="./manifest.json">
-  <link rel="icon" sizes="192x192" href="./icon-192.png">
-  <link rel="apple-touch-icon" href="./icon-192.png">
+  <link rel="manifest" href="./manifest.json?v=3">
+  <link rel="icon" sizes="192x192" href="./icon-192.png?v=3">
+  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png?v=3">
+  <link rel="apple-touch-icon" sizes="167x167" href="./apple-touch-icon-167.png?v=3">
+  <link rel="apple-touch-icon" sizes="152x152" href="./apple-touch-icon-152.png?v=3">
 
   <style>
     * { box-sizing: border-box; }
@@ -157,7 +162,7 @@
 <body>
   <div class="app-shell">
     <div class="topbar">
-      <img src="./icon-192.png" alt="SIR SUSA SCAI PERUGIA">
+      <img src="./icon-192.png?v=3" alt="SIR SUSA SCAI PERUGIA">
       <div class="brand">
         <div class="brand-title">PERFORMANCE CENTER</div>
         <div class="brand-subtitle">SIR SUSA SCAI PERUGIA • Strength & Performance</div>
@@ -174,7 +179,7 @@
 
       <div id="setupMessage" class="setup">
         <div class="setup-card">
-          <img src="./icon-192.png" alt="">
+          <img src="./icon-192.png?v=3" alt="">
           <h1>Performance Center</h1>
           <p>
             Il contenitore PWA è pronto. Manca solo il link pubblico della Web App
@@ -190,6 +195,9 @@
     // INCOLLEREMO QUI IL LINK DELLA WEB APP GOOGLE APPS SCRIPT
     // =========================================================
     const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxi1WuohPO1p7PrW2f1jb6_S4F8p4iQmRwq67ta8J-oRyFsDai7ntiILER3qzsZnK5l/exec';
+
+    const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+    document.documentElement.classList.toggle('standalone-mode', isStandalone);
 
     const frame = document.getElementById('performanceFrame');
     const setup = document.getElementById('setupMessage');
@@ -207,7 +215,7 @@
 
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function () {
-        navigator.serviceWorker.register('./service-worker.js');
+        navigator.serviceWorker.register('./service-worker.js?v=3');
       });
     }
   </script>

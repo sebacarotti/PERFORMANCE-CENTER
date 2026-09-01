@@ -2,7 +2,7 @@
   "name": "Performance Center - SIR SUSA SCAI PERUGIA",
   "short_name": "Performance Center",
   "description": "Strength & Performance Center - SIR SUSA SCAI PERUGIA",
-  "start_url": "./",
+  "start_url": "./?source=pwa-v3",
   "scope": "./",
   "display": "standalone",
   "background_color": "#0b0d12",
@@ -21,5 +21,11 @@
       "type": "image/png",
       "purpose": "any maskable"
     }
-  ]
+  ],
+  "id": "./?source=pwa-v3",
+  "display_override": [
+    "standalone",
+    "fullscreen"
+  ],
+  "prefer_related_applications": false
 }

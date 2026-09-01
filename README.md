@@ -1,19 +1,13 @@
-# Performance Center - PWA shell
+# Performance Center – APP MODE v3
 
-Questa cartella contiene il contenitore installabile per Performance Center.
+Questa versione mantiene la dashboard Google Apps Script e rafforza il comportamento PWA/standalone, soprattutto su iPhone e iPad.
 
-File:
-- index.html
-- manifest.json
-- service-worker.js
-- icon-192.png
-- icon-512.png
+Caricare tutti i file nella root del repository GitHub `PERFORMANCE-CENTER`, sostituendo quelli esistenti.
 
-Prima della pubblicazione:
-1. Apri index.html.
-2. Sostituisci PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE con il link pubblico della Web App Google Apps Script.
-3. Carica tutti i file nella root del repository GitHub.
-4. Attiva GitHub Pages sul branch main, cartella /root.
+Dopo il deploy:
+1. eliminare l'eventuale vecchia icona dalla schermata Home;
+2. in Safari aprire https://sebacarotti.github.io/PERFORMANCE-CENTER/ ;
+3. Condividi → Aggiungi alla schermata Home;
+4. aprire SOLO dall'icona appena creata.
 
-La dashboard Google Apps Script deve consentire l'apertura in iframe.
-Nel Code.gs attuale è già presente XFrameOptionsMode.ALLOWALL.
+Nota: se si apre il link da Safari/Chrome si vedrà comunque il browser. La modalità standalone parte dall'icona installata in Home.
